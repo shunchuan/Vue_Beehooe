@@ -5,13 +5,16 @@ import Vue from 'vue';
 Vue.use(iView);
 
 const lang = {
-    state:{
-
+    state: {
+        lang: 'zh-CN'
     },
-    mutations:{
-        
+    mutations: {
+        SET_LANG: (state, payload) => {
+            state.lang = payload;
+            Cookies.set('lang', payload);
+        }
     },
-    action:{
+    action: {
 
     }
 };

@@ -1,5 +1,5 @@
 
-const siderbarmenu = [
+const sidebarmenu = [
   {
     path: '/index',
     name: 'menu.index',
@@ -184,4 +184,4 @@ const siderbarmenu = [
 
 ]
 
-export default siderbarmenu;
+export default sidebarmenu;
