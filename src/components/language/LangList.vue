@@ -9,6 +9,7 @@ export default {
   data() {
     return {
       langList: [
+        ss
         {
           value: "zh-CN",
           text: "中文简体"
