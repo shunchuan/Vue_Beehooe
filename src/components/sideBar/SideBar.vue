@@ -1,14 +1,4 @@
 <template>
-<!-- 左侧 -->
-    <div class="side-wrapper" :theme="theme" >
-       <!-- hover:!state.sidebar.minOpened, -->
-      <!-- logo -->
-      <div style="height:64px;" class="logo-box">
-        <img :src="require('../../assets/img/logo.png')" alt="" height="50" v-show="true">
-        <img src="https://file.iviewui.com/dist/76ecb6e76d2c438065f90cd7f8fa7371.png" alt="" height="40" width="40"
-             style="position: absolute;top: 5px;left: 0" v-show="false">
-      </div>
-      <!-- logo /-->
       <!-- 左侧导航 -->
       <nav-bar style="padding-bottom: 80px">
         <Menu width="220" :theme="theme" :accordion="true" @on-select="selectFn" :active-name="$route.path">
@@ -33,15 +23,6 @@
           </div>
         </Menu>
       </nav-bar>
-      <div class="theme-switch" >
-        Switch Theme
-        <i-switch size="large" @on-change="themeChange" v-model="themeBool">
-          <span slot="open">Dark</span>
-          <span slot="close">Light</span>
-        </i-switch>
-      </div>
-      <!-- 左侧导航 /-->
-    </div>    
 </template>
 <script scoped>
 // import sidebarmenu from "../../config/sidebarmenu.js";
@@ -86,26 +67,44 @@ export default {
 </script>
 
 <style scoped>
-.navbar {
-  overflow-x: hidden;
-  overflow-y: scroll;
-  top: 64px;
-  bottom: 40px;
-  right: -17px;
-  transition: all 0.28s ease-out;
-  position: absolute;
-  left: 0;
-  z-index: 99;
-}
+/*左侧菜单样式*/
+.menu_list{ overflow-y:auto; overflow-x:hiddel; height:auto}
+.menu_list p{ display:block}
+.menu_list .menu_head1{width:270px;height:60px; line-height:60px;font-size:16px;color:#b2c0d1;cursor:pointer;position:relative;margin:0px;background: url(../images/sidenav_bg1.png) no-repeat; }
+.menu_list .menu_head2{width:270px;height:60px; line-height:60px;font-size:16px;color:#b2c0d1;cursor:pointer;position:relative;margin:0px;background: url(../images/sidenav_bg2.png) no-repeat; }
+.menu_list .menu_head3{width:270px;height:60px; line-height:60px;font-size:16px;color:#b2c0d1;cursor:pointer;position:relative;margin:0px;background: url(../images/sidenav_bg3.png) no-repeat; }
+.menu_list .menu_head4{width:270px;height:60px; line-height:60px;font-size:16px;color:#b2c0d1;cursor:pointer;position:relative;margin:0px;background: url(../images/sidenav_bg4.png) no-repeat; }
+.menu_list .menu_head5{width:270px;height:60px; line-height:60px;font-size:16px;color:#b2c0d1;cursor:pointer;position:relative;margin:0px;background: url(../images/sidenav_bg5.png) no-repeat; }
+.menu_list .menu_head6{width:270px;height:60px; line-height:60px;font-size:16px;color:#b2c0d1;cursor:pointer;position:relative;margin:0px;background: url(../images/sidenav_bg6.png) no-repeat; }
 
-.theme-switch {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  background: #010101;
-  line-height: 40px;
-  text-align: center;
-  z-index: 901;
-}
+
+
+.menu_list .menu_head1:hover{ cursor:pointer;background:url(../images/sidenav_bg1_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+.menu_list .menu_head1:hover a{ color:#fff}
+.menu_list .menu_head2:hover a{ color:#fff}
+.menu_list .menu_head3:hover a{ color:#fff}
+.menu_list .menu_head4:hover a{ color:#fff}
+.menu_list .menu_head5:hover a{ color:#fff}
+.menu_list .menu_head6:hover a{ color:#fff}
+.menu_list .menu_head2:hover{cursor:pointer;background:url(../images/sidenav_bg2_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+.menu_list .menu_head3:hover{cursor:pointer;background:url(../images/sidenav_bg3_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+.menu_list .menu_head4:hover{cursor:pointer;background:url(../images/sidenav_bg4_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+.menu_list .menu_head5:hover{cursor:pointer;background:url(../images/sidenav_bg5_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+.menu_list .menu_head6:hover{cursor:pointer;background:url(../images/sidenav_bg6_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+
+
+
+.menu_list .current1{ cursor:pointer;background:url(../images/sidenav_bg1_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+.menu_list .current1 a{ color:#fff}
+.menu_list .current2 a{ color:#fff}
+.menu_list .current3 a{ color:#fff}
+.menu_list .current4 a{ color:#fff}
+.menu_list .current5 a{ color:#fff}
+.menu_list .current6 a{ color:#fff}
+.menu_list .current2{cursor:pointer;background:url(../images/sidenav_bg2_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+.menu_list .current3{cursor:pointer;background:url(../images/sidenav_bg3_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+.menu_list .current4{cursor:pointer;background:url(../images/sidenav_bg4_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+.menu_list .current5{cursor:pointer;background:url(../images/sidenav_bg5_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+.menu_list .current6{cursor:pointer;background:url(../images/sidenav_bg6_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+
 </style>
