@@ -1,43 +1,34 @@
 <template>
-  <!-- <div class="header"> -->
-      <Row type="flex" justify="start" class="code-row-bg">
-          <Col span='1'>
-            <toggleSideBar></toggleSideBar>
-            </Col>
-          <Col class="head-text" span="15">
-            <HeadList 
-              v-for="(item,index ) in headList" 
-              :key="index" 
-              :span="parseInt((24-16)/headList.length)" 
-              :item="item"
-            >
-            </HeadList>
-          </Col>
-          <Col span='8'>
-            <user></user>
-            <lang-list></lang-list>
-            <toggleScreen></toggleScreen>
-          </Col>          
-      </Row>
-  <!-- </div> -->
+  <div class='head'>   
+    <Logo>
+    </Logo>  
+    <div class="right">               
+      <div class="menu">
+        <ul>
+            <li class="ic1"><a  target="MainFrame" class="current">
+                首页</a></li>
+            <li class="ic2"><a  target="MainFrame">报警</a></li>
+            <li class="ic3" style="display: none"><a href="#">用户中心</a></li>
+            <li class="ic4" style="display: none"><a href="#">帮助中心</a></li>
+            <li class="ic5" style="display: none"><a href="SystemManage/AlertDataManage.aspx"
+                target="MainFrame">超限处理</a></li>
+            <li class="ic7"><a  target="_blank">投影广播</a></li>
+            <li class="ic6"><a href="#" onclick="btn_close();">退出系统</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import toggleScreen from "../Toggle/ToggleScreen";
-import toggleSideBar from "../Toggle/toggleSideBar";
 import User from "../user/User";
-import Lang from "../language/Lang";
 import LangList from "../language/LangList";
-import HeadList from "./HeadList";
+import Logo from "../logo/Logo";
 export default {
   name: "theader",
   components: {
-    toggleScreen,
-    toggleSideBar,
-    User,
-    Lang,
-    LangList: LangList,
-    HeadList
+    Logo
   },
   data() {
     return {
@@ -68,13 +59,221 @@ export default {
   }
 };
 </script>
-<style>
-.msg-group-box {
-  float: right;
-  font-size: 1em;
+<style scoped>
+.ivu-layout-header {
+  background: #1e334c;
+  height: 80px;
+  clear: both;
+  line-height: 80px;
+  display: block;
+  color: #b7cae2;
+  position: relative;
 }
 
+.ivu-menu-horizontal {
+  height: auto;
+  line-height: 76px;
+}
 
+.head {
+  background: #1e334c;
+  height: 80px;
+  clear: both;
+  line-height: 80px;
+  display: block;
+  color: #b7cae2;
+  position: relative;
+}
+
+.head .right {
+  margin-left: 270px;
+  background: #919191;
+}
+.head .right .menu {
+  width: 60%;
+  float: left;
+  height: 80px;
+  line-height: 65px;
+}
+.head .right .menu ul {
+  list-style:none;  
+  padding: 0;
+  margin: 0;
+}
+.head .right .menu ul li {
+  line-height: 110px;
+  float: left;
+}
+.head .right .menu ul li.ic1 a {
+  width: 100px;
+  margin: auto;
+  background: url(../../assets/img/ic1_menu.png) no-repeat center;
+  background-position: center 15px;
+  border-top: #1e334c 2px solid;
+  float: left;
+  text-align: center;
+  color: #829bb9;
+  display: block;
+  height: 78px;
+}
+.head .right .menu ul li.ic1 a:hover {
+  color: #fff;
+  background: url(../../assets/img/ic1_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
+.head .right .menu ul li.ic1 a.current {
+  color: #fff;
+  background: url(../../assets/img/ic1_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
+.head .right .menu ul li.ic2 a {
+  width: 100px;
+  margin: auto;
+  background: url(../../assets/img/ic2_menu.png) no-repeat center;
+  background-position: center 15px;
+  border-top: #1e334c 2px solid;
+  float: left;
+  text-align: center;
+  color: #829bb9;
+  display: block;
+  height: 78px;
+}
+.head .right .menu ul li.ic2 a:hover {
+  color: #fff;
+  background: url(../../assets/img/ic2_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
+.head .right .menu ul li.ic2 a.current {
+  color: #fff;
+  background: url(../../assets/img/ic2_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
+.head .right .menu ul li.ic3 a {
+  width: 100px;
+  margin: auto;
+  background: url(../../assets/img/ic3_menu.png) no-repeat center;
+  background-position: center 15px;
+  border-top: #1e334c 2px solid;
+  float: left;
+  text-align: center;
+  color: #829bb9;
+  display: block;
+  height: 78px;
+}
+.head .right .menu ul li.ic3 a:hover {
+  color: #fff;
+  background: url(../../assets/img/ic3_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
+.head .right .menu ul li.ic3 a.current {
+  color: #fff;
+  background: url(../../assets/img/ic3_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
+.head .right .menu ul li.ic4 a {
+  width: 100px;
+  margin: auto;
+  background: url(../../assets/img/ic4_menu.png) no-repeat center;
+  background-position: center 15px;
+  border-top: #1e334c 2px solid;
+  float: left;
+  text-align: center;
+  color: #829bb9;
+  display: block;
+  height: 78px;
+}
+.head .right .menu ul li.ic4 a:hover {
+  color: #fff;
+  background: url(../../assets/img/ic4_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
+.head .right .menu ul li.ic4 a.current {
+  color: #fff;
+  background: url(../../assets/img/ic4_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
+.head .right .menu ul li.ic5 a {
+  width: 100px;
+  margin: auto;
+  background: url(../../assets/img/ic5_menu.png) no-repeat center;
+  background-position: center 15px;
+  border-top: #1e334c 2px solid;
+  float: left;
+  text-align: center;
+  color: #829bb9;
+  display: block;
+  height: 78px;
+}
+.head .right .menu ul li.ic5 a:hover {
+  color: #fff;
+  background: url(../../assets/img/ic5_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
+.head .right .menu ul li.ic5 a.current {
+  color: #fff;
+  background: url(../../assets/img/ic5_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
+
+.head .right .menu ul li.ic6 a {
+  width: 100px;
+  margin: auto;
+  background: url(../../assets/img/ic6_menu.png) no-repeat center;
+  background-position: center 15px;
+  border-top: #1e334c 2px solid;
+  float: left;
+  text-align: center;
+  color: #829bb9;
+  display: block;
+  height: 78px;
+}
+.head .right .menu ul li.ic6 a:hover {
+  color: #fff;
+  background: url(../../assets/img/ic6_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
+.head .right .menu ul li.ic6 a.current {
+  color: #fff;
+  background: url(../../assets/img/ic6_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
+
+.head .right .menu ul li.ic7 a {
+  width: 100px;
+  margin: auto;
+  background: url(../../assets/img/ic3_menu.png) no-repeat center;
+  background-position: center 15px;
+  border-top: #1e334c 2px solid;
+  float: left;
+  text-align: center;
+  color: #829bb9;
+  display: block;
+  height: 78px;
+}
+.head .right .menu ul li.ic7 a:hover {
+  color: #fff;
+  background: url(../../assets/img/ic3_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
+.head .right .menu ul li.ic7 a.current {
+  color: #fff;
+  background: url(../../assets/img/ic3_menu_b.png) no-repeat center #15273c;
+  border-top: 2px solid #36aeea;
+  background-position: center 15px;
+}
 </style>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
