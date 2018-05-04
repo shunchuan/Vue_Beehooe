@@ -49,6 +49,7 @@ import THeader from "../components/header/THeader";
 import NavBar from "../components/navbar/NavBar";
 import Api from "../libs/axios/api";
 import api from "../libs/axios/api";
+import config from '../libs/config';
 export default {
   name: "index",
   data() {
@@ -63,13 +64,15 @@ export default {
   },
   beforeMount() {
     this.getMenu();
+    console.log("index")
+    console.log(this.$router)
   },
 
   computed: {},
   methods: {
     async getMenu() {
       let url = "../src/assets/json/menulist.json";
-      let result = await Api().getJsonApi(url);
+      let result = await Api.getJsonApi(url);
       this.menu = result.data;
     },
     handleChange(name) {

@@ -1,16 +1,12 @@
 import ajaxHelper from './ajaxHelper';
+import baseURL from './baseURL';
 
-export default _ => {
-    // 异步
-    return {
-        getTreeDataApi (url) {
-            return ajaxHelper.get(url, null);
-        },
-        getJsonApi (url) {
-            return ajaxHelper.get(url, null);
-            // ajaxHelper.get(url, null).then(await result => {
-            //     return result;
-            // });
-        }
-    };
-}
+let api = {};
+
+api.getTreeDataApi = url => { return ajaxHelper.get(url, null); };
+
+api.getJsonApi = url => { return ajaxHelper.get(url, null); };
+
+api.getRouterJson = params => { return ajaxHelper.get('../src/assets/json/router.json', params); };
+
+export default api;

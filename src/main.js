@@ -58,6 +58,17 @@ router.afterEach(() => {
     window.scrollTo(0, 0);
 });
 
+let LoadRouters = Cookies.getJSON('LoadRouters');
+console.log("main.js记录loadRouters");
+console.dir(LoadRouters);
+import common from './libs/common';
+if (LoadRouters) {
+    //这里是防止用户手动刷新页面，整个app要重新加载,动态新增的路由，会消失，所以我们重新add一次
+    let routes =  common.routerFormat(LoadRouters);
+    router.addRoutes(routes);
+}
+
+
 new Vue({
     el: '#app',
     router: router,

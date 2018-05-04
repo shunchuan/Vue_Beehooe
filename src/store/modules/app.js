@@ -5,15 +5,19 @@ import Vue from 'vue';
 Vue.use(iView);
 
 const app = {
-    state:{
-
+    state: {
+        strLoadRouters: null
     },
-    mutations:{
+    mutations: {
         setAvator(state, path) {
             localStorage.avatorImgPath = path;
         },
+        setLoadRouters(state, payload) {
+            state.strLoadRouters = payload;
+            Cookies.set('LoadRouters', state.strLoadRouters);
+        }
     },
-    action:{
+    action: {
 
     }
 };

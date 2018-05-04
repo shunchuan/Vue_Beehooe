@@ -1,7 +1,7 @@
 // 引入axios
 import axios from 'axios';
 
-let cancel, promiseArr = {}
+let cancel, promiseArr = {};
 const CancelToken = axios.CancelToken;
 // 请求拦截器
 axios.interceptors.request.use(config => {
@@ -15,7 +15,7 @@ axios.interceptors.request.use(config => {
     return config;
 }, error => {
     return Promise.reject(error);
-})
+});
 
 // 响应拦截器即异常处理
 axios.interceptors.response.use(response => {
@@ -67,7 +67,7 @@ axios.interceptors.response.use(response => {
     }
     // message.err(err.message);
     return Promise.resolve(err.response);
-})
+});
 
 // axios.defaults.baseURL = '/api';
 // 设置默认请求头
@@ -89,7 +89,16 @@ export default {
                 })
             }).then(res => {
                 resolve(res);
+            }).catch(res => {
+                reject(res);
             });
+        });
+    },
+    timeout() {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                reject('请求超时-timeout');
+            }, 5000);
         });
     },
     // post请求
@@ -104,7 +113,9 @@ export default {
                 })
             }).then(res => {
                 resolve(res);
+            }).catch(res => {
+                reject(res);
             });
         });
     }
-}
+};
