@@ -34,7 +34,8 @@ common.routerFormat = function (routers) {
             component(resolve) {
                 // 拼出相对路径，由于component无法识别变量
                 // 利用Webpack 的 Code-Splitting 功能
-                require(['../views/' + component + '.vue'], resolve)
+                // require(['../views/' + component + '.vue'], resolve)
+                require(['../' + component + '.vue'], resolve);
             },
             hidden: hidden,
             children: children

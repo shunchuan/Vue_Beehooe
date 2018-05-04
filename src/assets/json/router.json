@@ -156,5 +156,19 @@
                 "component": "my-components/markdown-editor/markdown-editor"
             }
         ]
+    },
+    {
+        "path": "/9",
+        "title": "例子",
+        "name": "9",
+        "component": "views/index",
+        "children": [
+            {
+                "path": "temp",
+                "title": "例子",
+                "name": "temp",
+                "component": "components/temp"
+            }
+        ]
     }
 ]

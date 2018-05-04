@@ -136,5 +136,18 @@
                 "title": "测试下拉2"
             }
         ]
+    },
+    {
+        "path": "/9",
+        "icon": "ionic",
+        "title": "例子",
+        "name": "9",
+        "children": [
+            {
+                "path": "temp",
+                "title": "例子",
+                "name": "temp"
+            }
+        ]
     }
 ]

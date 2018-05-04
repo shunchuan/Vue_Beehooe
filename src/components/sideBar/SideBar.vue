@@ -68,18 +68,18 @@ export default {
 
 <style scoped>
 /*左侧菜单样式*/
-.menu_list{ overflow-y:auto; overflow-x:hiddel; height:auto}
+/* .menu_list{ overflow-y:auto; overflow-x:hiddel; height:auto}
 .menu_list p{ display:block}
 .menu_list .menu_head1{width:270px;height:60px; line-height:60px;font-size:16px;color:#b2c0d1;cursor:pointer;position:relative;margin:0px;background: url(../images/sidenav_bg1.png) no-repeat; }
 .menu_list .menu_head2{width:270px;height:60px; line-height:60px;font-size:16px;color:#b2c0d1;cursor:pointer;position:relative;margin:0px;background: url(../images/sidenav_bg2.png) no-repeat; }
 .menu_list .menu_head3{width:270px;height:60px; line-height:60px;font-size:16px;color:#b2c0d1;cursor:pointer;position:relative;margin:0px;background: url(../images/sidenav_bg3.png) no-repeat; }
 .menu_list .menu_head4{width:270px;height:60px; line-height:60px;font-size:16px;color:#b2c0d1;cursor:pointer;position:relative;margin:0px;background: url(../images/sidenav_bg4.png) no-repeat; }
 .menu_list .menu_head5{width:270px;height:60px; line-height:60px;font-size:16px;color:#b2c0d1;cursor:pointer;position:relative;margin:0px;background: url(../images/sidenav_bg5.png) no-repeat; }
-.menu_list .menu_head6{width:270px;height:60px; line-height:60px;font-size:16px;color:#b2c0d1;cursor:pointer;position:relative;margin:0px;background: url(../images/sidenav_bg6.png) no-repeat; }
+.menu_list .menu_head6{width:270px;height:60px; line-height:60px;font-size:16px;color:#b2c0d1;cursor:pointer;position:relative;margin:0px;background: url(../images/sidenav_bg6.png) no-repeat; } */
 
 
 
-.menu_list .menu_head1:hover{ cursor:pointer;background:url(../images/sidenav_bg1_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+/* .menu_list .menu_head1:hover{ cursor:pointer;background:url(../images/sidenav_bg1_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
 .menu_list .menu_head1:hover a{ color:#fff}
 .menu_list .menu_head2:hover a{ color:#fff}
 .menu_list .menu_head3:hover a{ color:#fff}
@@ -105,6 +105,6 @@ export default {
 .menu_list .current3{cursor:pointer;background:url(../images/sidenav_bg3_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
 .menu_list .current4{cursor:pointer;background:url(../images/sidenav_bg4_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
 .menu_list .current5{cursor:pointer;background:url(../images/sidenav_bg5_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
-.menu_list .current6{cursor:pointer;background:url(../images/sidenav_bg6_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;}
+.menu_list .current6{cursor:pointer;background:url(../images/sidenav_bg6_s.png) center right no-repeat;width:270px;color:#fff; height:60px; line-height:60px;font-size:16px;} */
 
 </style>
