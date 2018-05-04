@@ -8,71 +8,24 @@
         <Layout>
              <Sider ref="side1"  width="270">
                 <nav-bar>
-                    <Menu active-name="1-2" theme="dark" width="auto"  :open-names="['1']">
-                    <Submenu name="1">
+                    <Menu 
+                        active-name="1-2" 
+                        theme="dark" 
+                        width="auto"  
+                        :open-names="['1']"
+                        @on-select="handleChange"
+                    >
+                        <Submenu v-for="(item, index) in menu " :key="index">
                             <template slot="title">
-                                <Icon type="ios-navigate"></Icon>
-                            <span>  Item 1</span>
+                                <Icon :type="item.icon"></Icon>
+                                <span>{{item.title}}</span>
                             </template>
-                            <MenuItem name="1-1">Option 1</MenuItem>
-                            <MenuItem name="1-2">Option 2</MenuItem>
-                            <MenuItem name="1-3">Option 3</MenuItem>
-                        </Submenu>
-                        <Submenu name="2">
-                            <template slot="title">
-                                <Icon type="ios-keypad"></Icon>
-                                Item 2
-                            </template>
-                            <MenuItem name="2-1">Option 1</MenuItem>
-                            <MenuItem name="2-2">Option 2</MenuItem>
-                        </Submenu>
-                        <Submenu name="3">
-                            <template slot="title">
-                                <Icon type="ios-analytics"></Icon>
-                                Item 3
-                            </template>
-                            <MenuItem name="3-1">Option 1</MenuItem>
-                            <MenuItem name="3-2">Option 2</MenuItem>
-                        </Submenu>
-                        <Submenu name="3">
-                            <template slot="title">
-                                <Icon type="ios-analytics"></Icon>
-                                Item 3
-                            </template>
-                            <MenuItem name="3-1">Option 1</MenuItem>
-                            <MenuItem name="3-2">Option 2</MenuItem>
-                        </Submenu>
-                        <Submenu name="3">
-                            <template slot="title">
-                                <Icon type="ios-analytics"></Icon>
-                                Item 3
-                            </template>
-                            <MenuItem name="3-1">Option 1</MenuItem>
-                            <MenuItem name="3-2">Option 2</MenuItem>
-                        </Submenu>
-                        <Submenu name="3">
-                            <template slot="title">
-                                <Icon type="ios-analytics"></Icon>
-                                Item 3
-                            </template>
-                            <MenuItem name="3-1">Option 1</MenuItem>
-                            <MenuItem name="3-2">Option 2</MenuItem>
-                        </Submenu>
-                        <Submenu name="3">
-                            <template slot="title">
-                                <Icon type="ios-analytics"></Icon>
-                                Item 3
-                            </template>
-                            <MenuItem name="3-1">Option 1</MenuItem>
-                            <MenuItem name="3-2">Option 2</MenuItem>
-                        </Submenu>
-                        <Submenu name="3">
-                            <template slot="title">
-                                <Icon type="ios-analytics"></Icon>
-                                Item 3
-                            </template>
-                            <MenuItem name="3-1">Option 1</MenuItem>
-                            <MenuItem name="3-2">Option 2</MenuItem>
+                            <MenuItem 
+                                v-for="(childrenItem,oindex) in item.children " 
+                                :key="oindex"
+                                :name="childrenItem.name"
+                                >{{childrenItem.title}}
+                             </MenuItem>
                         </Submenu>
                     </Menu>
                 </nav-bar>
@@ -94,19 +47,37 @@
 <script>
 import THeader from "../components/header/THeader";
 import NavBar from "../components/navbar/NavBar";
+import Api from "../libs/axios/api";
+import api from "../libs/axios/api";
 export default {
   name: "index",
   data() {
     return {
-      isCollapsed: false
+      isCollapsed: false,
+      menu: []
     };
   },
   components: {
     THeader,
     NavBar
   },
+  beforeMount() {
+    this.getMenu();
+  },
+
   computed: {},
-  methods: {}
+  methods: {
+    async getMenu() {
+      let url = "../src/assets/json/menulist.json";
+      let result = await Api().getJsonApi(url);
+      this.menu = result.data;
+    },
+    handleChange(name) {
+        this.$router.push({
+          name: name
+        });
+    }
+  }
 };
 </script>
 

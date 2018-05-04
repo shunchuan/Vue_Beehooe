@@ -9,7 +9,9 @@ const app = {
 
     },
     mutations:{
-        
+        setAvator(state, path) {
+            localStorage.avatorImgPath = path;
+        },
     },
     action:{
 

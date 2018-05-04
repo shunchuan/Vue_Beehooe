@@ -1,0 +1,140 @@
+[
+    {
+        "path": "/enterprise",
+        "icon": "home",
+        "name": "enterprise",
+        "title": "企业",
+        "children": [
+            {
+                "path": "index",
+                "title": "企业",
+                "name": "enterprise_index"
+            }
+        ]
+    },
+    {
+        "path": "/access-test",
+        "icon": "person-stalker",
+        "title": "团队",
+        "name": "accesstest",
+        "children": [
+            {
+                "path": "index",
+                "title": "团队",
+                "name": "accesstest_index",
+                "access": 1
+            }
+        ]
+    },
+    {
+        "path": "/1",
+        "icon": "person",
+        "title": "个人",
+        "name": "1",
+        "children": [
+            {
+                "path": "index",
+                "title": "个人",
+                "name": "international_index"
+            }
+        ]
+    },
+    {
+        "path": "/2",
+        "icon": "email",
+        "title": "我的消息",
+        "name": "2",
+        "children": [
+            {
+                "path": "index",
+                "title": "我的消息",
+                "name": "1"
+            }
+        ]
+    },
+    {
+        "path": "/3",
+        "icon": "star",
+        "title": "我的收藏",
+        "name": "3",
+        "children": [
+            {
+                "path": "index",
+                "title": "我的收藏",
+                "name": "2"
+            }
+        ]
+    },
+    {
+        "path": "/4",
+        "icon": "paper-airplane",
+        "title": "我的外发",
+        "name": "4",
+        "children": [
+            {
+                "path": "index",
+                "title": "我的外发",
+                "name": "3"
+            }
+        ]
+    },
+    {
+        "path": "/5",
+        "icon": "share",
+        "title": "我的共享",
+        "name": "5",
+        "children": [
+            {
+                "path": "index",
+                "title": "我的共享",
+                "name": "4"
+            }
+        ]
+    },
+    {
+        "path": "/6",
+        "icon": "locked",
+        "title": "我的锁定",
+        "name": "6",
+        "children": [
+            {
+                "path": "index",
+                "title": "我的锁定",
+                "name": "5"
+            }
+        ]
+    },
+    {
+        "path": "/7",
+        "icon": "ionic",
+        "title": "共享给我",
+        "name": "7",
+        "children": [
+            {
+                "path": "index",
+                "title": "共享给我",
+                "name": "6"
+            }
+        ]
+    },
+    {
+        "path": "/8",
+        "icon": "ios-pricetags",
+        "title": "我的标签",
+        "name": "8",
+        "children": [
+            {
+                "path": "text-editor",
+                "icon": "compose",
+                "name": "text-editor",
+                "title": "测试下拉1"
+            },
+            {
+                "path": "md-editor",
+                "icon": "pound",
+                "name": "md-editor",
+                "title": "测试下拉2"
+            }
+        ]
+    }
+]

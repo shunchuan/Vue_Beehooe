@@ -1,0 +1,160 @@
+[
+    {
+        "path": "enterprise",
+        "icon": "home",
+        "name": "enterprise",
+        "title": "企业",
+        "component": "Main",
+        "children": [
+            {
+                "path": "index",
+                "title": "企业",
+                "name": "enterprise_index",
+                "component": "enterprise/enterprise"
+            }
+        ]
+    },
+    {
+        "path": "/access-test",
+        "icon": "person-stalker",
+        "title": "团队",
+        "name": "accesstest",
+        "component": "Main",
+        "children": [
+            {
+                "path": "index",
+                "title": "团队",
+                "name": "accesstest_index",
+                "component": "access/access-test"
+            }
+        ]
+    },
+    {
+        "path": "/1",
+        "icon": "person",
+        "title": "个人",
+        "name": "1",
+        "component": "Main",
+        "children": [
+            {
+                "path": "index",
+                "title": "个人",
+                "name": "international_index",
+                "component": "international/international"
+            }
+        ]
+    },
+    {
+        "path": "/2",
+        "icon": "email",
+        "title": "我的消息",
+        "name": "2",
+        "component": "Main",
+        "children": [
+            {
+                "path": "index",
+                "title": "我的消息",
+                "name": "1",
+                "component": "international/international"
+            }
+        ]
+    },
+    {
+        "path": "/3",
+        "icon": "star",
+        "title": "我的收藏",
+        "name": "3",
+        "component": "Main",
+        "children": [
+            {
+                "path": "index",
+                "title": "我的收藏",
+                "name": "2",
+                "component": "international/international"
+            }
+        ]
+    },
+    {
+        "path": "/4",
+        "icon": "paper-airplane",
+        "title": "我的外发",
+        "name": "4",
+        "component": "Main",
+        "children": [
+            {
+                "path": "index",
+                "title": "我的外发",
+                "name": "3",
+                "component": "international/international"
+            }
+        ]
+    },
+    {
+        "path": "/5",
+        "icon": "share",
+        "title": "我的共享",
+        "name": "5",
+        "component": "Main",
+        "children": [
+            {
+                "path": "index",
+                "title": "我的共享",
+                "name": "4",
+                "component": "international/international"
+            }
+        ]
+    },
+    {
+        "path": "/6",
+        "icon": "locked",
+        "title": "我的锁定",
+        "name": "6",
+        "component": "Main",
+        "children": [
+            {
+                "path": "index",
+                "title": "我的锁定",
+                "name": "5",
+                "component": "international/international"
+            }
+        ]
+    },
+    {
+        "path": "/7",
+        "icon": "ionic",
+        "title": "共享给我",
+        "name": "7",
+        "component": "Main",
+        "children": [
+            {
+                "path": "index",
+                "title": "共享给我",
+                "name": "6",
+                "component": "international/international"
+            }
+        ]
+    },
+    {
+        "path": "/8",
+        "icon": "ios-pricetags",
+        "title": "我的标签",
+        "name": "8",
+        "component": "Main",
+        "children": [
+            {
+                "path": "text-editor",
+                "icon": "compose",
+                "name": "text-editor",
+                "title": "测试下拉1",
+                "component": "my-components/text-editor/text-editor"
+            },
+            {
+                "path": "md-editor",
+                "icon": "pound",
+                "name": "md-editor",
+                "title": "测试下拉2",
+                "component": "my-components/markdown-editor/markdown-editor"
+            }
+        ]
+    }
+]
