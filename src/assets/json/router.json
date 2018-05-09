@@ -1,5 +1,20 @@
 [
     {
+        "path": "home111",
+        "icon": "home",
+        "name": "home111",
+        "title": "首页",
+        "component": "views/index",
+        "children": [
+            {
+                "path": "index",
+                "title": "首页",
+                "name": "home111_index",
+                "component": "components/temp"
+            }
+        ]
+    },
+    {
         "path": "enterprise",
         "icon": "home",
         "name": "enterprise",

@@ -15,6 +15,11 @@ const app = {
         setLoadRouters(state, payload) {
             state.strLoadRouters = payload;
             Cookies.set('LoadRouters', state.strLoadRouters);
+        },
+        logout (state, vm) {
+            Cookies.remove('user');
+            Cookies.remove('password');
+            localStorage.clear();
         }
     },
     action: {

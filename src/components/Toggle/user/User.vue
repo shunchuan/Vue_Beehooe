@@ -7,14 +7,14 @@
         </a>
         <!-- <DropdownItems></DropdownItems> -->
         <Dropdown-menu slot="list">
-            <Dropdown-item v-for="item in list" :key=item.text @click.native="item.native">{{item.text}}</Dropdown-item>
+            <!-- <Dropdown-item v-for="item in list" :key=item.text @click.native="item.native">{{item.text}}</Dropdown-item> -->
         <!-- <Dropdown-item @click.native="modalUser=true">个人信息</Dropdown-item>
         <Dropdown-item @click.native="logout">退出登录</Dropdown-item> -->
         </Dropdown-menu>
     </Dropdown>
 </template>
 <script>
-import DropdownItems from "../Dropdown";
+// import DropdownItems from "../Dropdown";
 export default {
   components: {
     // DropdownItems

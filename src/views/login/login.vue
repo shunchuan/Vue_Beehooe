@@ -43,6 +43,7 @@ import common from "../../libs/common";
 import util from "../../libs/util";
 import Api from "../../libs/axios/api";
 import config from "../../libs/config";
+import localStorageHelper from "../../libs/localStorageHelper";
 export default {
   data() {
     return {
@@ -64,15 +65,6 @@ export default {
         if (valid) {
           Cookies.set("user", this.form.userName);
           Cookies.set("password", this.form.password);
-          this.$store.commit(
-            "setAvator",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3448484253,3685836170&fm=27&gp=0.jpg"
-          );
-          if (this.form.userName === "iview_admin") {
-            Cookies.set("access", 0);
-          } else {
-            Cookies.set("access", 1);
-          }
           this.getRouter();
           this.$router.push({
             name: "home_index"
@@ -80,19 +72,16 @@ export default {
         }
       });
     },
-    async getRouter() {
+    getRouter() {
       let routerUrl = "../src/assets/json/router.json";
-      let result = await Api.getJsonApi(routerUrl);
-      let rout = result.data;
-      let routers = common.routerFormat(rout);
-      this.$router.addRoutes(routers);
-      console.dir(config)
-      console.log(config.env)
-      if (config.env === "development") {
-        console.log("login记录rout");
-        this.$store.commit("setLoadRouters", rout);
-      }
-      console.dir(this.$store.state.app.strLoadRouters);
+      Api.getJsonApi(routerUrl).then(result => {
+        let rout = result.data;
+        // let routers = common.routerFormat(rout);
+        let routers = [];
+        common.newRouterFormat(routers, rout);
+        this.$router.addRoutes(routers);
+        localStorageHelper.set("setLoadRouters", JSON.stringify(rout));
+      });
     }
   }
 };

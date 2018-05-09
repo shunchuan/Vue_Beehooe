@@ -1,3 +1,5 @@
+import lazyLoading from './lazyLoading'
+
 let common={
 
 };
@@ -44,5 +46,21 @@ common.routerFormat = function (routers) {
     });
     return fmRouters;
 };
+
+common.newRouterFormat=function(router,data){
+    // 简单检查是否是可以处理的数据
+    if (!(data instanceof Array)) {
+        return false;
+    }
+    data.forEach((item)=>{
+        let menu = Object.assign({},item)
+        menu.component = lazyLoading(menu.component)
+        if(!item.leaf){
+          menu.children = []
+          this.newRouterFormat(menu.children,item.children)
+        }
+        router.push(menu)
+      })
+}
 
 export default common;

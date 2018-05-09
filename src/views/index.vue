@@ -38,7 +38,12 @@
                     </Breadcrumb>
                 
                 <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
-                    Content
+                    <keep-alive>
+                        <router-view v-if="$route.meta.keepAlive"></router-view>
+                    </keep-alive>
+                    <router-view v-if="!$route.meta.keepAlive">
+                        <!-- 这里是不被缓存的视图组件，比如 Edit！ -->
+                    </router-view>
                 </Content>
             </Layout>
         </Layout>
@@ -49,7 +54,7 @@ import THeader from "../components/header/THeader";
 import NavBar from "../components/navbar/NavBar";
 import Api from "../libs/axios/api";
 import api from "../libs/axios/api";
-import config from '../libs/config';
+import config from "../libs/config";
 export default {
   name: "index",
   data() {
@@ -64,8 +69,8 @@ export default {
   },
   beforeMount() {
     this.getMenu();
-    console.log("index")
-    console.log(this.$router)
+    console.log("index");
+    console.log(this.$router);
   },
 
   computed: {},
@@ -76,9 +81,9 @@ export default {
       this.menu = result.data;
     },
     handleChange(name) {
-        this.$router.push({
-          name: name
-        });
+      this.$router.push({
+        name: name
+      });
     }
   }
 };

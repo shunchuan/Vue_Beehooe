@@ -8,6 +8,7 @@ import Util from './libs/util';
 import App from './app.vue';
 import 'iview/dist/styles/iview.css';
 import './assets/style/index.css';
+import localStorageHelper from './libs/localStorageHelper'
 
 import VueI18n from 'vue-i18n';
 import Cookies from 'js-cookie';
@@ -39,39 +40,22 @@ Vue.locale('zh-CN', mergeZH);
 Vue.locale('en-US', mergeEN);
 Vue.locale('en-US', mergeTW);
 
-
-// 路由配置
-const RouterConfig = {
-    mode: 'history',
-    routes: Routers
-};
-const router = new VueRouter(RouterConfig);
-
-router.beforeEach((to, from, next) => {
-    iView.LoadingBar.start();
-    Util.title(to.meta.title);
-    next();
-});
-
-router.afterEach(() => {
-    iView.LoadingBar.finish();
-    window.scrollTo(0, 0);
-});
-
-let LoadRouters = Cookies.getJSON('LoadRouters');
+let LoadRouters = JSON.parse(localStorageHelper.get('setLoadRouters'))
 console.log("main.js记录loadRouters");
 console.dir(LoadRouters);
 import common from './libs/common';
 if (LoadRouters) {
     //这里是防止用户手动刷新页面，整个app要重新加载,动态新增的路由，会消失，所以我们重新add一次
-    let routes =  common.routerFormat(LoadRouters);
-    router.addRoutes(routes);
+    // let routes = common.routerFormat(rout);
+    let routes = [];
+    common.newRouterFormat(routes, LoadRouters);
+    Routers.addRoutes(routes);
 }
 
 
 new Vue({
     el: '#app',
-    router: router,
+    router: Routers,
     store: store,
     render: h => h(App)
 });

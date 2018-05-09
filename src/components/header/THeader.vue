@@ -13,7 +13,7 @@
             <li class="ic5" style="display: none"><a href="SystemManage/AlertDataManage.aspx"
                 target="MainFrame">超限处理</a></li>
             <li class="ic7"><a  target="_blank">投影广播</a></li>
-            <li class="ic6"><a href="#" onclick="btn_close();">退出系统</a></li>
+            <li class="ic6"><a href="#" @click="btn_close">退出系统</a></li>
         </ul>
       </div>
     </div>
@@ -21,10 +21,12 @@
 </template>
 
 <script>
+import Logo from "../logo/Logo";
+import Cookies from "js-cookie";
 import toggleScreen from "../Toggle/ToggleScreen";
 import User from "../user/User";
 import LangList from "../language/LangList";
-import Logo from "../logo/Logo";
+import localStorageHelper from "../../libs/localStorageHelper";
 export default {
   name: "theader",
   components: {
@@ -55,6 +57,13 @@ export default {
   methods: {
     toggleSideBar() {
       this.$store.dispatch("ToggleSideBar");
+    },
+    btn_close() {
+      this.$store.commit("logout", this);
+      this.$router.push({
+        name: "login"
+      });
+      localStorageHelper.remove("LoadRouters");
     }
   }
 };
@@ -96,7 +105,7 @@ export default {
   line-height: 65px;
 }
 .head .right .menu ul {
-  list-style:none;  
+  list-style: none;
   padding: 0;
   margin: 0;
 }

@@ -1,5 +1,18 @@
 [
     {
+        "path": "/home111",
+        "icon": "home",
+        "name": "home111",
+        "title": "首页",
+        "children": [
+            {
+                "path": "index",
+                "title": "首页",
+                "name": "home111_index"
+            }
+        ]
+    },
+    {
         "path": "/enterprise",
         "icon": "home",
         "name": "enterprise",
