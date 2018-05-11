@@ -40,17 +40,17 @@ Vue.locale('zh-CN', mergeZH);
 Vue.locale('en-US', mergeEN);
 Vue.locale('en-US', mergeTW);
 
-let LoadRouters = JSON.parse(localStorageHelper.get('setLoadRouters'))
-console.log("main.js记录loadRouters");
-console.dir(LoadRouters);
-import common from './libs/common';
-if (LoadRouters) {
-    //这里是防止用户手动刷新页面，整个app要重新加载,动态新增的路由，会消失，所以我们重新add一次
-    // let routes = common.routerFormat(rout);
-    let routes = [];
-    common.newRouterFormat(routes, LoadRouters);
-    Routers.addRoutes(routes);
-}
+// let LoadRouters = JSON.parse(localStorageHelper.get('setLoadRouters'))
+// console.log("main.js记录loadRouters");
+// console.dir(LoadRouters);
+// import common from './libs/common';
+// if (LoadRouters) {
+//     //这里是防止用户手动刷新页面，整个app要重新加载,动态新增的路由，会消失，所以我们重新add一次
+//     // let routes = common.routerFormat(rout);
+//     let routes = [];
+//     common.newRouterFormat(routes, LoadRouters);
+//     Routers.addRoutes(routes);
+// }
 
 
 new Vue({

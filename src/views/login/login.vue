@@ -67,7 +67,7 @@ export default {
           Cookies.set("password", this.form.password);
           this.getRouter();
           this.$router.push({
-            name: "home_index"
+            name: "home"
           });
         }
       });

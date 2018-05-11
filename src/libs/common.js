@@ -61,6 +61,6 @@ common.newRouterFormat=function(router,data){
         }
         router.push(menu)
       })
-}
+};
 
 export default common;
