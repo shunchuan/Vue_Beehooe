@@ -1,36 +1,20 @@
 <template>
       <!-- 左侧导航 -->
       <nav-bar style="padding-bottom: 80px">
-        <Menu width="220" :theme="theme" :accordion="true" @on-select="selectFn" :active-name="$route.path">
-          <div v-for="(item,index) in sidebarmenu " :key="index">
-            <Submenu :name="index" v-if="item.children && item.children.length>0 && !item.hidden">
-              <template slot="title">
-                <i class="icon iconfont " :class="item.icon ? item.icon :'icon-collection'"></i>
-                {{$t(item.name)}}
-              </template>
-              <Menu-item :name="sub.path" v-for="(sub,i) in item.children" :key="i" v-if="!sub.hidden">
-                <i class="icon iconfont " :class="sub.icon ? sub.icon : 'icon-collection'"></i>
-                {{$t(sub.name)}}
-              </Menu-item>
-            </Submenu>
-            <div>
-              <Menu-item :name="item.path" :key="index"
-                         v-if="item.children.length==0 && !item.hidden && item.level!=0 ">
-                <i class="icon iconfont " :class="item.icon ? item.icon :'icon-collection'"></i>
-                 {{$t(item.name)}}
-              </Menu-item>
-            </div>
-          </div>
+        <Menu width="220" :theme="theme" :accordion="true" @on-select="selectFn" :active-name="$route.name">
+          <menu-tree :nodes="$router.options.routes"></menu-tree>
         </Menu>
       </nav-bar>
 </template>
 <script scoped>
 // import sidebarmenu from "../../config/sidebarmenu.js";
 import NavBar from "../navbar/NavBar.vue";
+import MenuTree from '../MenuTree.vue';
 export default {
   name: "full",
   components: {
-    NavBar
+    NavBar,
+    MenuTreeVue
   },
   data() {
     return {
