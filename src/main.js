@@ -61,7 +61,11 @@ router.beforeEach((route, redirect, next) => {
             name: 'home'
         });
     } else {
-        next();
+        if (route.name) {
+            next();
+        }else{
+            next({ name: 'error-404' });
+        }
     }
 });
 

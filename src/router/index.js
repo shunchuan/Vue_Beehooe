@@ -31,7 +31,7 @@ export default new Router({
             component: login
         },
         {
-            path: '/*',
+            path: '/error-404',
             name: 'error-404',
             meta: {
                 title: '404-页面不存在'

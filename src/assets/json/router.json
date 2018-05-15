@@ -1,6 +1,6 @@
 [
     {
-        "path": "home111",
+        "path": "/home111",
         "icon": "home",
         "name": "home111",
         "title": "首页",
@@ -15,7 +15,7 @@
         ]
     },
     {
-        "path": "enterprise",
+        "path": "/enterprise",
         "icon": "home",
         "name": "enterprise",
         "title": "企业",
